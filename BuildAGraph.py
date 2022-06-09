@@ -18,12 +18,15 @@ def build_graph():
     layout = build_gui()
     window = psg.Window("Лемніската", layout)
     while True:
-        pypt.clf()
         events, val = window.read()
-        if events in (None, "Cancel", psg.WINDOW_CLOSED):
+        if events == "Save":
+            pypt.savefig("lemniscate.png")
+            pypt.close()
+        elif events in (None, "Cancel", psg.WINDOW_CLOSED):
             break
         elif events == "Calculate function":
             try:
+                pypt.clf()
                 a = int(val[0])
                 min_fi_val = float(val[1])
                 max_fi_val = float(val[2])
@@ -37,13 +40,11 @@ def build_graph():
             x = np.sqrt(r_sq) * np.cos(fi)
             y = np.sqrt(r_sq) * np.sin(fi)
 
-            pypt.plot(x, y)
+            pypt.plot(x, y, color="blue")
             pypt.xlabel("X axis")
             pypt.ylabel("Y axis")
+            pypt.title("Лемніската")
             pypt.show()
-            if events == "Save":
-                pypt.savefig("lemniscate.png")
-                pypt.close()
 
 
 build_graph()
