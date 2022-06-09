@@ -1,31 +1,49 @@
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as pypt
 import PySimpleGUI as psg
 
 
 def build_gui():
+    psg.theme("DarkAmber")
     layout = [
-        [psg.Text("Enter the value for parameter 'a': "), psg.InputText()],
-        [psg.Save()],
-        [psg.Submit(), psg.Cancel()]]
-
-    window = psg.Window("Лемніската", layout)
+        [psg.Text("Value for parameter a: "), psg.InputText()],
+        [psg.Text("Min fi value: "), psg.InputText()],
+        [psg.Text("Max fi value: "), psg.InputText()],
+        [psg.Text("Number of dots: "), psg.InputText()],
+        [psg.Save(), psg.Button("Calculate function"), psg.Button("Cancel")]]
+    return layout
 
 
 def build_graph():
-    a = int(input("Enter the value for parameter 'a': "))
-    print("Entered values is: ", a)
+    layout = build_gui()
+    window = psg.Window("Лемніската", layout)
+    while True:
+        pypt.clf()
+        events, val = window.read()
+        if events in (None, "Cancel", psg.WINDOW_CLOSED):
+            break
+        elif events == "Calculate function":
+            try:
+                a = int(val[0])
+                min_fi_val = float(val[1])
+                max_fi_val = float(val[2])
+                dots_num = int(val[3])
+            except:
+                psg.popup("Error in inserted data")
+                break
+            fi = np.linspace(min_fi_val, max_fi_val, dots_num)
+            r_sq = 2 * (a ** 2) * np.cos(2 * fi)
+            r_sq[r_sq < 0] = 0
+            x = np.sqrt(r_sq) * np.cos(fi)
+            y = np.sqrt(r_sq) * np.sin(fi)
 
-    fi = np.linspace(0, 2 * np.pi, 1000)
-    r_sq = pow(2 * pow(a, 2) * np.cos(2 * fi), 2)
-
-    x = np.array(np.sqrt(r_sq) * np.cos(fi))
-    y = np.array(np.sqrt(r_sq) * np.sin(fi))
-
-    plt.plot(x, y, color='blue')
-    plt.title("Лемніската")
-    plt.grid()
-    plt.show()
+            pypt.plot(x, y)
+            pypt.xlabel("X axis")
+            pypt.ylabel("Y axis")
+            pypt.show()
+            if events == "Save":
+                pypt.savefig("lemniscate.png")
+                pypt.close()
 
 
 build_graph()
