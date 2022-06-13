@@ -35,7 +35,12 @@
                                                     shortcut="UP"/>
                             </accelerator>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" onAction="#onSaveAsClicked" text="Save as"/>
+                        <MenuItem mnemonicParsing="false" onAction="#onSaveAsClicked" text="Save as">
+                            <accelerator>
+                                <KeyCodeCombination alt="DOWN" code="S" control="DOWN" meta="UP" shift="UP"
+                                                    shortcut="UP"/>
+                            </accelerator>
+                        </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#onCloseClicked" text="Close"/>
                         <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem mnemonicParsing="false" onAction="#onExitClicked" text="Exit">

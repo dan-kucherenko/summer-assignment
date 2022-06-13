@@ -1,17 +1,17 @@
 package com.example.texteditor;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class TextEditorController {
     @FXML
     public TextArea textArea;
+
+    protected File fileToSave;
 
     //    ---------------File menu controller--------
     @FXML
@@ -19,7 +19,7 @@ public class TextEditorController {
     }
 
     @FXML
-    private void onOpenClicked() {
+    private File onOpenClicked() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open File");
         fileChooser.getExtensionFilters().add
@@ -27,8 +27,9 @@ public class TextEditorController {
         fileChooser.getExtensionFilters().add
                 (new FileChooser.ExtensionFilter("All Files", "*"));
         File file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
+        fileToSave = file;
         if (file == null)
-            return;
+            return null;
         textArea.clear();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -39,14 +40,37 @@ public class TextEditorController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return file;
     }
 
     @FXML
     private void onSaveClicked() {
+        if (fileToSave != null) {
+            try {
+                BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileToSave));
+                bufferedWriter.write(textArea.getText());
+                bufferedWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else
+            onSaveAsClicked();
     }
 
     @FXML
     private void onSaveAsClicked() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save File As");
+        File file = fileChooser.showSaveDialog(textArea.getScene().getWindow());
+        if (file == null)
+            return;
+        try {
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            bufferedWriter.write(textArea.getText());
+            bufferedWriter.close();
+        } catch (IOException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     @FXML
