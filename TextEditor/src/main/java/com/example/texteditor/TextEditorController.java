@@ -16,6 +16,8 @@ public class TextEditorController {
     //    ---------------File menu controller--------
     @FXML
     private void onNewClicked() {
+        MyTab myTab = new MyTab("Untitled");
+        tabs.getTabs().add(myTab);
     }
 
     @FXML
@@ -78,6 +80,8 @@ public class TextEditorController {
 
     @FXML
     private void onCloseClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        tabs.getTabs().remove(currentTab);
     }
 
     @FXML
