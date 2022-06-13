@@ -5,13 +5,14 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TabPane;
 import javafx.stage.FileChooser;
 
+
 import java.io.*;
 
 public class TextEditorController {
     @FXML
-    public TabPane tabs;
+    private TabPane tabs;
 
-    protected File fileToSave;
+    private File fileToSave;
 
     //    ---------------File menu controller--------
     @FXML
@@ -23,6 +24,12 @@ public class TextEditorController {
     @FXML
     private File onOpenClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("To open the file you should create a new tab");
+            alert.showAndWait();
+            return null;
+        }
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open File");
         fileChooser.getExtensionFilters().add
@@ -31,6 +38,8 @@ public class TextEditorController {
                 (new FileChooser.ExtensionFilter("All Files", "*"));
         File file = fileChooser.showOpenDialog(currentTab.getTextArea().getScene().getWindow());
         fileToSave = file;
+        if (fileToSave == null)
+            return null;
         currentTab.setText(fileToSave.getName());
         currentTab.getTextArea().clear();
         try {
