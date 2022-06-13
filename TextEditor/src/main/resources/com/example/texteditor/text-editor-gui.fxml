@@ -1,73 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.input.KeyCodeCombination?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
-            prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.texteditor.TextEditorController">
-    <top>
-        <MenuBar BorderPane.alignment="CENTER">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.texteditor.TextEditorController">
+    <children>
+      <TabPane fx:id="tabs" layoutX="1.0" layoutY="92.0" prefHeight="308.0" prefWidth="585.0" tabClosingPolicy="ALL_TABS" />
+        <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onNewClicked" text="New">
                             <accelerator>
-                                <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP"
-                                                    shortcut="UP"/>
+                                <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#onOpenClicked" text="Open">
                             <accelerator>
-                                <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP"
-                                                    shortcut="UP"/>
+                                <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#onSaveClicked" text="Save">
                             <accelerator>
-                                <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP"
-                                                    shortcut="UP"/>
+                                <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
                         <MenuItem mnemonicParsing="false" onAction="#onSaveAsClicked" text="Save as">
                             <accelerator>
-                                <KeyCodeCombination alt="DOWN" code="S" control="DOWN" meta="UP" shift="UP"
-                                                    shortcut="UP"/>
+                                <KeyCodeCombination alt="DOWN" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
-                        <MenuItem mnemonicParsing="false" onAction="#onCloseClicked" text="Close"/>
-                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" onAction="#onCloseClicked" text="Close" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#onExitClicked" text="Exit">
                             <accelerator>
-                                <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP"
-                                                    shortcut="UP"/>
+                                <KeyCodeCombination alt="DOWN" code="F4" control="UP" meta="UP" shift="UP" shortcut="UP" />
                             </accelerator>
                         </MenuItem>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About"/>
+                        <MenuItem mnemonicParsing="false" text="About" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-    </top>
-    <right>
-        <ScrollBar orientation="VERTICAL" BorderPane.alignment="CENTER"/>
-    </right>
-    <center>
-        <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
-    </center>
-</BorderPane>
+      <Button layoutX="12.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="14.0" style="-fx-font-weight: bold" text="B">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="53.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="14.0" style="-fx-font-weight: bold" text="I">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="93.0" layoutY="67.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="14.0" style="-fx-font-weight: bold" text="U" underline="true">
+         <font>
+            <Font name="Times New Roman" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="12.0" layoutY="43.0" prefHeight="17.0" prefWidth="60.0" text="Font size:" />
+      <Spinner layoutX="73.0" layoutY="39.0" prefHeight="25.0" prefWidth="53.0" />
+      <ScrollBar layoutX="586.0" layoutY="92.0" orientation="VERTICAL" prefHeight="308.0" prefWidth="14.0" />
+    </children>
+</AnchorPane>

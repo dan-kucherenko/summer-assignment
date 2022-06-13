@@ -1,4 +1,4 @@
-module com.example.texteditor {
+module com.texteditor {
     requires javafx.controls;
     requires javafx.fxml;
 

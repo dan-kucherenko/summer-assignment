@@ -2,14 +2,14 @@ package com.example.texteditor;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TabPane;
 import javafx.stage.FileChooser;
 
 import java.io.*;
 
 public class TextEditorController {
     @FXML
-    public TextArea textArea;
+    public TabPane tabs;
 
     protected File fileToSave;
 
@@ -20,22 +20,22 @@ public class TextEditorController {
 
     @FXML
     private File onOpenClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Open File");
         fileChooser.getExtensionFilters().add
                 (new FileChooser.ExtensionFilter("All Text Files", "*.txt", "*.html"));
         fileChooser.getExtensionFilters().add
                 (new FileChooser.ExtensionFilter("All Files", "*"));
-        File file = fileChooser.showOpenDialog(textArea.getScene().getWindow());
+        File file = fileChooser.showOpenDialog(currentTab.getTextArea().getScene().getWindow());
         fileToSave = file;
-        if (file == null)
-            return null;
-        textArea.clear();
+        currentTab.setText(fileToSave.getName());
+        currentTab.getTextArea().clear();
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                textArea.appendText(line + '\n');
+                currentTab.getTextArea().appendText(line + '\n');
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,10 +45,11 @@ public class TextEditorController {
 
     @FXML
     private void onSaveClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (fileToSave != null) {
             try {
                 BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileToSave));
-                bufferedWriter.write(textArea.getText());
+                bufferedWriter.write(currentTab.getTextArea().getText());
                 bufferedWriter.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -59,14 +60,16 @@ public class TextEditorController {
 
     @FXML
     private void onSaveAsClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save File As");
-        File file = fileChooser.showSaveDialog(textArea.getScene().getWindow());
+        File file = fileChooser.showSaveDialog(currentTab.getTextArea().getScene().getWindow());
         if (file == null)
             return;
         try {
+            currentTab.setText(file.getName());
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
-            bufferedWriter.write(textArea.getText());
+            bufferedWriter.write(currentTab.getTextArea().getText());
             bufferedWriter.close();
         } catch (IOException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
