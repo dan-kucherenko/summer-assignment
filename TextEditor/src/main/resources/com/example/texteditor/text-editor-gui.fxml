@@ -5,21 +5,22 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.texteditor.TextEditorController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <menus>
             <Menu mnemonicParsing="false" text="File">
                <items>
-                  <MenuItem mnemonicParsing="false" text="New" />
-                  <MenuItem mnemonicParsing="false" text="Open" />
-                  <MenuItem mnemonicParsing="false" text="Save" />
-                  <MenuItem mnemonicParsing="false" text="Save as" />
-                  <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" onAction="#onNewClicked" text="New" />
+                  <MenuItem mnemonicParsing="false" onAction="#onOpenClicked" text="Open" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveClicked" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSaveAsClicked" text="Save as" />
+                  <MenuItem mnemonicParsing="false" onAction="#onCloseClicked" text="Close" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Exit" />
+                  <MenuItem mnemonicParsing="false" onAction="#onExitClicked" text="Exit" />
                </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Edit">
@@ -38,4 +39,7 @@
    <right>
       <ScrollBar orientation="VERTICAL" BorderPane.alignment="CENTER" />
    </right>
+   <center>
+      <TextArea fx:id="textArea" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
 </BorderPane>
