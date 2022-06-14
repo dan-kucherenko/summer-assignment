@@ -3,11 +3,12 @@ package com.example.texteditor;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 
@@ -18,6 +19,12 @@ public class TextEditorController {
     private TabPane tabs;
     @FXML
     private Spinner<Integer> fontSpinner;
+    @FXML
+    private ToggleButton bold;
+    @FXML
+    private ToggleButton italic;
+    @FXML
+    private ColorPicker colorPicker;
 
 
     private File fileToSave;
@@ -110,14 +117,56 @@ public class TextEditorController {
     //    ------------Buttons controller----------
     @FXML
     private void onBoldClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        else if (bold.isSelected() && italic.isSelected())
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD, FontPosture.ITALIC, fontSpinner.getValue()));
+        else if (bold.isSelected())
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD, fontSpinner.getValue()));
+        else if (italic.isSelected())
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.NORMAL, FontPosture.ITALIC, fontSpinner.getValue()));
+        else
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.NORMAL, fontSpinner.getValue()));
     }
 
     @FXML
     private void onItalicClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        else if (bold.isSelected() && italic.isSelected())
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD, FontPosture.ITALIC, fontSpinner.getValue()));
+        else if (italic.isSelected())
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.ITALIC, fontSpinner.getValue()));
+        else if (bold.isSelected())
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD, FontPosture.REGULAR, fontSpinner.getValue()));
+        else
+            currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
+
     }
 
+    //    @FXML
+//    private void onUnderlinedClicked() {
+//        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+//        if (currentTab == null)
+//            return;
+//        else if (underlined.isSelected()) {
+//            currentTab.getTextArea().lookup()setStyle("-fx-underline: true;");
+//        } else {
+//            currentTab.getTextArea().setStyle("-fx-underline: false;");
+//
+//        }
+//    }
     @FXML
-    private void onUnderlinedClicked() {
+    private void onColorClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        Color color = colorPicker.getValue();
+        currentTab.getTextArea().setStyle("-fx-text-fill: " + toRgbString(color) + ';');
+    }
+
+    private String toRgbString(Color c) {
+        return "rgb(" + c.getRed() * 255 + "," + c.getGreen() * 255 + "," + c.getBlue() * 255 + ")";
     }
 
     @FXML
