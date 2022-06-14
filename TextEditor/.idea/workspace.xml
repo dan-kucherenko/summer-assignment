@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Color editing added">
+    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="GUI upd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" afterDir="false" />
@@ -150,7 +150,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655214445209</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Clear button handler added">
+      <created>1655215945711</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655215945712</updated>
+    </task>
+    <task id="LOCAL-00012" summary="GUI upd">
+      <created>1655215956468</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655215956468</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -198,6 +212,8 @@
     <MESSAGE value="Resizable window added" />
     <MESSAGE value="Font spinner added" />
     <MESSAGE value="Color editing added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Color editing added" />
+    <MESSAGE value="Clear button handler added" />
+    <MESSAGE value="GUI upd" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI upd" />
   </component>
 </project>

@@ -8,11 +8,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
 
 import java.io.*;
+import java.util.List;
 
 public class TextEditorController {
     @FXML
@@ -27,7 +27,8 @@ public class TextEditorController {
     private ColorPicker colorPicker;
     @FXML
     private ToggleButton underlined;
-
+    @FXML
+    private ComboBox<String> fontComboBox;
 
 
     private File fileToSave;
@@ -111,8 +112,9 @@ public class TextEditorController {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         tabs.getTabs().remove(currentTab);
     }
+
     @FXML
-    private void onClearClicked(){
+    private void onClearClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (currentTab == null || currentTab.getTextArea() == null)
             return;
@@ -156,6 +158,21 @@ public class TextEditorController {
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
 
     }
+
+    @FXML
+    private void setFontComboBox() {
+        String [] fonts = Font.getFamilies().toArray(new String[0]);
+        fontComboBox.getItems().addAll(fonts);
+    }
+    @FXML
+    private void getFontFromComboBox(){
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null || currentTab.getTextArea() == null)
+            return;
+        else
+            currentTab.getTextArea().setFont(Font.font(fontComboBox.getValue(), currentFontValue));
+    }
+
     @FXML
     private void onColorClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
