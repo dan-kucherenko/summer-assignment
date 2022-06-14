@@ -116,7 +116,7 @@ public class TextEditorController {
     @FXML
     private void onClearClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
-        if (currentTab == null || currentTab.getTextArea() == null)
+        if (currentTab == null)
             return;
         else
             currentTab.getTextArea().clear();
