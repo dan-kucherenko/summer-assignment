@@ -1,8 +1,13 @@
 package com.example.texteditor;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Spinner;
+import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TabPane;
+import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 
 
@@ -11,10 +16,14 @@ import java.io.*;
 public class TextEditorController {
     @FXML
     private TabPane tabs;
+    @FXML
+    private Spinner<Integer> fontSpinner;
+
 
     private File fileToSave;
+    private int currentFontValue = 12;
 
-    //    ---------------File menu controller--------
+    //    ---------------Menu bar controller--------
     @FXML
     private void onNewClicked() {
         MyTab myTab = new MyTab("Untitled");
@@ -96,5 +105,44 @@ public class TextEditorController {
     @FXML
     private void onExitClicked() {
         System.exit(0);
+    }
+
+    //    ------------Buttons controller----------
+    @FXML
+    private void onBoldClicked() {
+    }
+
+    @FXML
+    private void onItalicClicked() {
+    }
+
+    @FXML
+    private void onUnderlinedClicked() {
+    }
+
+    @FXML
+    private void implementSpinner() {
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100);
+        valueFactory.setValue(currentFontValue);
+        fontSpinner.setValueFactory(valueFactory);
+    }
+
+    @FXML
+    private void setFontSpinner() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        currentFontValue = fontSpinner.getValue();
+        if (currentTab == null || currentTab.getTextArea() == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("To change the font you should type some text");
+            alert.showAndWait();
+            return;
+        }
+        fontSpinner.valueProperty().addListener(new ChangeListener<Integer>() {
+            @Override
+            public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
+                currentFontValue = fontSpinner.getValue();
+                currentTab.getTextArea().setFont(new Font(currentFontValue));
+            }
+        });
     }
 }
