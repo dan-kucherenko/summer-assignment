@@ -1,2 +1,1 @@
-# summer-assignment
-Simple text editor
+# Simple text editor
