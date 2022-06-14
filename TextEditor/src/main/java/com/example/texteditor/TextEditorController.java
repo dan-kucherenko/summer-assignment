@@ -4,6 +4,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.Clipboard;
+import javafx.scene.input.ClipboardContent;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -12,7 +14,7 @@ import javafx.stage.FileChooser;
 
 
 import java.io.*;
-import java.util.List;
+
 
 public class TextEditorController {
     @FXML
@@ -29,6 +31,14 @@ public class TextEditorController {
     private ToggleButton underlined;
     @FXML
     private ComboBox<String> fontComboBox;
+    @FXML
+    private Button copyButton;
+    @FXML
+    private Button pasteButton;
+    @FXML
+    private Button cutButton;
+    private final Clipboard clipboard = Clipboard.getSystemClipboard();
+    private final ClipboardContent content = new ClipboardContent();
 
 
     private File fileToSave;
@@ -168,6 +178,36 @@ public class TextEditorController {
         else
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
 
+    }
+
+    @FXML
+    private void onCopyClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        String text = currentTab.getTextArea().getSelectedText();
+        content.putString(text);
+        clipboard.setContent(content);
+    }
+
+    @FXML
+    private void onCutClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        String text = currentTab.getTextArea().getSelectedText();
+        currentTab.getTextArea().replaceSelection("");
+        content.putString(text);
+        clipboard.setContent(content);
+    }
+
+    @FXML
+    private void onPasteClicked() {
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        currentTab.getTextArea().paste();
+        clipboard.clear();
     }
 
     @FXML

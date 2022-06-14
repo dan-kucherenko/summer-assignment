@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Font choosing added">
+    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Minor upd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
