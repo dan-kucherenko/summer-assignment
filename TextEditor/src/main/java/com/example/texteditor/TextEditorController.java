@@ -83,7 +83,8 @@ public class TextEditorController {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (currentTab == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("To save the file you should create a new tab");
+            alert.setHeaderText("To save the file you should create a new tab");
+            alert.setContentText("To continue, click OK");
             alert.showAndWait();
             return;
         } else if (fileToSave != null) {
@@ -103,7 +104,8 @@ public class TextEditorController {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (currentTab == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("To save the file you should create a new tab");
+            alert.setHeaderText("To save the file you should create a new tab");
+            alert.setContentText("To continue, click OK");
             alert.showAndWait();
             return;
         }
@@ -136,15 +138,17 @@ public class TextEditorController {
         else
             currentTab.getTextArea().clear();
     }
+
     @FXML
-    private void onDeleteClicked(){
+    private void onDeleteClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (currentTab == null)
             return;
         currentTab.getTextArea().replaceSelection("");
     }
+
     @FXML
-    private void onAboutClicked(){
+    private void onAboutClicked() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("About");
         alert.setHeaderText("This is a simple text editor done by Kucherenko Daniil");
