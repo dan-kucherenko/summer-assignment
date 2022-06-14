@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane onMouseMoved="#implementSpinner" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.texteditor.TextEditorController">
+<AnchorPane onMouseMoved="#implementSpinner" prefHeight="450.0" prefWidth="729.0" style="-fx-background-color: #e6e6e6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.texteditor.TextEditorController">
     <children>
       <TabPane fx:id="tabs" layoutX="1.0" layoutY="92.0" prefHeight="308.0" prefWidth="600.0" style="-fx-background-color: #808080;" tabClosingPolicy="ALL_TABS" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0" />
         <MenuBar prefHeight="25.0" prefWidth="600.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -52,7 +53,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem mnemonicParsing="false" onAction="#onClearClicked" text="Clear" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -62,19 +63,25 @@
                 </Menu>
             </menus>
         </MenuBar>
-      <Label layoutX="248.0" layoutY="35.0" prefHeight="17.0" prefWidth="42.0" text="Font:" />
-      <Spinner fx:id="fontSpinner" editable="true" layoutX="284.0" layoutY="31.0" onMouseClicked="#setFontSpinner" prefHeight="25.0" prefWidth="53.0" />
-      <ToggleButton fx:id="bold" layoutX="344.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#onBoldClicked" prefHeight="25.0" prefWidth="0.0" text="B">
+      <Label layoutX="265.0" layoutY="37.0" prefHeight="17.0" prefWidth="42.0" text="Font:" />
+      <Spinner fx:id="fontSpinner" editable="true" layoutX="301.0" layoutY="33.0" onMouseClicked="#setFontSpinner" prefHeight="25.0" prefWidth="53.0" />
+      <ColorPicker fx:id="colorPicker" layoutX="265.0" layoutY="58.0" onAction="#onColorClicked" prefHeight="25.0" prefWidth="88.0" />
+      <ComboBox fx:id="fontComboBox" layoutX="361.0" layoutY="33.0" prefHeight="25.0" prefWidth="104.0" />
+      <ToggleButton fx:id="bold" layoutX="361.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#onBoldClicked" prefHeight="25.0" prefWidth="0.0" text="B">
          <font>
             <Font name="Times New Roman Bold" size="13.0" />
          </font>
       </ToggleButton>
-      <ToggleButton fx:id="italic" layoutX="344.0" layoutY="56.0" mnemonicParsing="false" onMouseClicked="#onItalicClicked" prefHeight="25.0" prefWidth="27.0" text="I">
+      <ToggleButton fx:id="italic" layoutX="400.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#onItalicClicked" prefHeight="25.0" prefWidth="27.0" text="I">
          <font>
             <Font name="Times New Roman Italic" size="13.0" />
          </font>
       </ToggleButton>
-      <ColorPicker fx:id="colorPicker" layoutX="248.0" layoutY="56.0" onAction="#onColorClicked" prefHeight="25.0" prefWidth="88.0" />
+      <ToggleButton fx:id="underlined" contentDisplay="RIGHT" layoutX="437.0" layoutY="58.0" mnemonicParsing="false" onMouseClicked="#onItalicClicked" prefHeight="25.0" prefWidth="27.0" text="U" underline="true">
+         <font>
+            <Font name="Times New Roman" size="13.0" />
+         </font>
+      </ToggleButton>
     </children>
    <opaqueInsets>
       <Insets />
