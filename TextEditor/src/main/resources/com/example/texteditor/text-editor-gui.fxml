@@ -55,6 +55,7 @@
                 <Menu mnemonicParsing="false" text="Edit">
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onClearClicked" text="Clear" />
+                  <MenuItem mnemonicParsing="false" onAction="#onDeleteClicked" text="Delete" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -83,9 +84,9 @@
             <Font name="Times New Roman" size="13.0" />
          </font>
       </ToggleButton>
-      <Button fx:id="cutButton" layoutX="439.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onCutClicked" prefHeight="25.0" prefWidth="44.0" text="Cut" />
-      <Button fx:id="copyButton" layoutX="439.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#onCopyClicked" text="Copy" />
-      <Button fx:id="pasteButton" layoutX="500.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#onPasteClicked" text="Paste" />
+      <Button layoutX="439.0" layoutY="59.0" mnemonicParsing="false" onMouseClicked="#onCutClicked" prefHeight="25.0" prefWidth="44.0" text="Cut" />
+      <Button layoutX="439.0" layoutY="34.0" mnemonicParsing="false" onMouseClicked="#onCopyClicked" text="Copy" />
+      <Button layoutX="489.0" layoutY="47.0" mnemonicParsing="false" onMouseClicked="#onPasteClicked" text="Paste" />
     </children>
    <opaqueInsets>
       <Insets />

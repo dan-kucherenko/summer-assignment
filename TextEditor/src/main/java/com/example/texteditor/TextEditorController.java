@@ -31,12 +31,6 @@ public class TextEditorController {
     private ToggleButton underlined;
     @FXML
     private ComboBox<String> fontComboBox;
-    @FXML
-    private Button copyButton;
-    @FXML
-    private Button pasteButton;
-    @FXML
-    private Button cutButton;
     private final Clipboard clipboard = Clipboard.getSystemClipboard();
     private final ClipboardContent content = new ClipboardContent();
 
@@ -141,6 +135,13 @@ public class TextEditorController {
             return;
         else
             currentTab.getTextArea().clear();
+    }
+    @FXML
+    private void onDeleteClicked(){
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        currentTab.getTextArea().replaceSelection("");
     }
 
     @FXML
