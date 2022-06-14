@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Save buttons error fixed">
+    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Font choosing added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" afterDir="false" />
     </list>
@@ -66,7 +66,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TextEditorApplication" />
         <item itemvalue="Application.TextEditorApplication" />
       </list>
     </recent_temporary>

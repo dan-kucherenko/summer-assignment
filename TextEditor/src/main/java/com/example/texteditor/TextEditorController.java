@@ -77,7 +77,12 @@ public class TextEditorController {
     @FXML
     private void onSaveClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
-        if (fileToSave != null) {
+        if (currentTab == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("To save the file you should create a new tab");
+            alert.showAndWait();
+            return;
+        } else if (fileToSave != null) {
             try {
                 BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileToSave));
                 bufferedWriter.write(currentTab.getTextArea().getText());
@@ -92,6 +97,12 @@ public class TextEditorController {
     @FXML
     private void onSaveAsClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("To save the file you should create a new tab");
+            alert.showAndWait();
+            return;
+        }
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Save File As");
         File file = fileChooser.showSaveDialog(currentTab.getTextArea().getScene().getWindow());
@@ -161,11 +172,12 @@ public class TextEditorController {
 
     @FXML
     private void setFontComboBox() {
-        String [] fonts = Font.getFamilies().toArray(new String[0]);
+        String[] fonts = Font.getFamilies().toArray(new String[0]);
         fontComboBox.getItems().addAll(fonts);
     }
+
     @FXML
-    private void getFontFromComboBox(){
+    private void getFontFromComboBox() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (currentTab == null || currentTab.getTextArea() == null)
             return;
