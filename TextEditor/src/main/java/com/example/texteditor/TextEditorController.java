@@ -143,6 +143,14 @@ public class TextEditorController {
             return;
         currentTab.getTextArea().replaceSelection("");
     }
+    @FXML
+    private void onAboutClicked(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About");
+        alert.setHeaderText("This is a simple text editor done by Kucherenko Daniil");
+        alert.setContentText("To continue, click OK");
+        alert.showAndWait();
+    }
 
     @FXML
     private void onExitClicked() {

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Copy, cut and paste buttons and handlers added">
+    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Delete button and handler added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" afterDir="false" />
@@ -178,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655220393694</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Delete button and handler added">
+      <created>1655220818202</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655220818202</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -230,6 +237,7 @@
     <MESSAGE value="GUI upd" />
     <MESSAGE value="Font choosing added" />
     <MESSAGE value="Copy, cut and paste buttons and handlers added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Copy, cut and paste buttons and handlers added" />
+    <MESSAGE value="Delete button and handler added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete button and handler added" />
   </component>
 </project>
