@@ -25,6 +25,9 @@ public class TextEditorController {
     private ToggleButton italic;
     @FXML
     private ColorPicker colorPicker;
+    @FXML
+    private ToggleButton underlined;
+
 
 
     private File fileToSave;
@@ -108,6 +111,14 @@ public class TextEditorController {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         tabs.getTabs().remove(currentTab);
     }
+    @FXML
+    private void onClearClicked(){
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null || currentTab.getTextArea() == null)
+            return;
+        else
+            currentTab.getTextArea().clear();
+    }
 
     @FXML
     private void onExitClicked() {
@@ -145,19 +156,6 @@ public class TextEditorController {
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
 
     }
-
-    //    @FXML
-//    private void onUnderlinedClicked() {
-//        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
-//        if (currentTab == null)
-//            return;
-//        else if (underlined.isSelected()) {
-//            currentTab.getTextArea().lookup()setStyle("-fx-underline: true;");
-//        } else {
-//            currentTab.getTextArea().setStyle("-fx-underline: false;");
-//
-//        }
-//    }
     @FXML
     private void onColorClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
