@@ -1,23 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="" />
+    <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="About button handler added">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2AOYiCnFNT61LYNvbxUitQXUWhq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/dev/IntellijWorkspace/git_intellij_tester&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.texteditor" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TextEditorApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.texteditor.TextEditorApplication" />
+      <module name="TextEditor" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.texteditor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TextEditorApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -27,6 +80,172 @@
       <option name="presentableId" value="Default" />
       <updated>1654882225239</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactored some files">
+      <created>1655119809263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1655119809263</updated>
+    </task>
+    <task id="LOCAL-00002" summary="File menu buttons added">
+      <created>1655119898649</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655119898649</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Handler for button &quot;open&quot; in file menu added">
+      <created>1655122763932</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1655122763932</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Shortcuts for file menu added">
+      <created>1655128292712</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655128292712</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Save buttons handlers added">
+      <created>1655131638390</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1655131638390</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Tabs added, handlers updated">
+      <created>1655148691508</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1655148691508</updated>
+    </task>
+    <task id="LOCAL-00007" summary="New and close button handlers added">
+      <created>1655148737899</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1655148737899</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Resizable window added">
+      <created>1655191919656</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655191919656</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Font spinner added">
+      <created>1655197269505</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1655197269505</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Color editing added">
+      <created>1655214445209</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655214445209</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Clear button handler added">
+      <created>1655215945711</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1655215945712</updated>
+    </task>
+    <task id="LOCAL-00012" summary="GUI upd">
+      <created>1655215956468</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1655215956468</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Font choosing added">
+      <created>1655217139722</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655217139722</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Copy, cut and paste buttons and handlers added">
+      <created>1655220393694</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655220393694</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Delete button and handler added">
+      <created>1655220818202</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1655220818202</updated>
+    </task>
+    <task id="LOCAL-00016" summary="About button handler added">
+      <created>1655226017982</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1655226017982</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactored some files" />
+    <MESSAGE value="File menu buttons added" />
+    <MESSAGE value="Handler for button &quot;open&quot; in file menu added" />
+    <MESSAGE value="Shortcuts for file menu added" />
+    <MESSAGE value="Save buttons handlers added" />
+    <MESSAGE value="Tabs added, handlers updated" />
+    <MESSAGE value="New and close button handlers added" />
+    <MESSAGE value="Resizable window added" />
+    <MESSAGE value="Font spinner added" />
+    <MESSAGE value="Color editing added" />
+    <MESSAGE value="Clear button handler added" />
+    <MESSAGE value="GUI upd" />
+    <MESSAGE value="Font choosing added" />
+    <MESSAGE value="Copy, cut and paste buttons and handlers added" />
+    <MESSAGE value="Delete button and handler added" />
+    <MESSAGE value="About button handler added" />
+    <option name="LAST_COMMIT_MESSAGE" value="About button handler added" />
   </component>
 </project>
