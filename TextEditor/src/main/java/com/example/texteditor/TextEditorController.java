@@ -29,6 +29,8 @@ public class TextEditorController {
     private ColorPicker colorPicker;
     @FXML
     private ComboBox<String> fontComboBox;
+    @FXML
+    private CheckMenuItem readOnly;
     private final Clipboard clipboard = Clipboard.getSystemClipboard();
     private final ClipboardContent content = new ClipboardContent();
 
@@ -136,12 +138,16 @@ public class TextEditorController {
         else
             currentTab.getTextArea().clear();
     }
+
     @FXML
-    private void onReadOnlyClicked(){
+    private void onReadOnlyClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
         if (currentTab == null)
             return;
-        currentTab.getTextArea().setEditable(false);
+        else if (readOnly.isSelected())
+            currentTab.getTextArea().setEditable(false);
+        else
+            currentTab.getTextArea().setEditable(true);
     }
 
     @FXML
@@ -197,6 +203,7 @@ public class TextEditorController {
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
 
     }
+
     @FXML
     private void onCopyClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
