@@ -28,8 +28,6 @@ public class TextEditorController {
     @FXML
     private ColorPicker colorPicker;
     @FXML
-    private ToggleButton underlined;
-    @FXML
     private ComboBox<String> fontComboBox;
     private final Clipboard clipboard = Clipboard.getSystemClipboard();
     private final ClipboardContent content = new ClipboardContent();

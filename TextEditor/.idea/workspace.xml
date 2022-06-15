@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2354439-fb94-491d-a3a8-dbe748366c04" name="Changes" comment="Error messages windows fix">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/texteditor/TextEditorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/texteditor/text-editor-gui.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="master" />
+        <entry key="$PROJECT_DIR$/.." value="feature1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -194,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655226017982</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Read only feature added">
+      <created>1655289117414</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1655289117414</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -248,6 +253,7 @@
     <MESSAGE value="Copy, cut and paste buttons and handlers added" />
     <MESSAGE value="Delete button and handler added" />
     <MESSAGE value="About button handler added" />
-    <option name="LAST_COMMIT_MESSAGE" value="About button handler added" />
+    <MESSAGE value="Read only feature added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Read only feature added" />
   </component>
 </project>
