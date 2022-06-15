@@ -56,6 +56,8 @@
                     <items>
                         <MenuItem mnemonicParsing="false" onAction="#onClearClicked" text="Clear" />
                   <MenuItem mnemonicParsing="false" onAction="#onDeleteClicked" text="Delete" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#onReadOnlyClicked" text="Set Read-Only" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -77,11 +79,6 @@
       <ToggleButton fx:id="italic" layoutX="363.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#onItalicClicked" prefHeight="25.0" prefWidth="27.0" text="I">
          <font>
             <Font name="Times New Roman Italic" size="13.0" />
-         </font>
-      </ToggleButton>
-      <ToggleButton fx:id="underlined" contentDisplay="RIGHT" layoutX="400.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#onItalicClicked" prefHeight="25.0" prefWidth="27.0" text="U" underline="true">
-         <font>
-            <Font name="Times New Roman" size="13.0" />
          </font>
       </ToggleButton>
       <Button layoutX="439.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#onCutClicked" prefHeight="25.0" prefWidth="44.0" text="Cut" />

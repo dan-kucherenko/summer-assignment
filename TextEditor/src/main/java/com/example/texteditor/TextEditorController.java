@@ -138,6 +138,13 @@ public class TextEditorController {
         else
             currentTab.getTextArea().clear();
     }
+    @FXML
+    private void onReadOnlyClicked(){
+        MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
+        if (currentTab == null)
+            return;
+        currentTab.getTextArea().setEditable(false);
+    }
 
     @FXML
     private void onDeleteClicked() {
@@ -192,7 +199,6 @@ public class TextEditorController {
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
 
     }
-
     @FXML
     private void onCopyClicked() {
         MyTab currentTab = (MyTab) tabs.getSelectionModel().getSelectedItem();
