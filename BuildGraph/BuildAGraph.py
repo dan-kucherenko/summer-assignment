@@ -4,19 +4,19 @@ import PySimpleGUI as psg
 
 
 def build_gui():  # creating a GUI
-    psg.theme("DarkAmber")
+    psg.theme("DarkBlue")
     layout = [
-        [psg.Text("Value for parameter a: "), psg.InputText()],
-        [psg.Text("Min fi value: "), psg.InputText()],
-        [psg.Text("Max fi value: "), psg.InputText()],
-        [psg.Text("Step: "), psg.InputText()],
+        [psg.Text("Value for parameter a:"), psg.InputText()],
+        [psg.Text("Min fi value:"), psg.InputText()],
+        [psg.Text("Max fi value:"), psg.InputText()],
+        [psg.Text("Step:"), psg.InputText()],
         [psg.Save(), psg.Button("Calculate function"), psg.Button("Cancel")]]
     return layout
 
 
 def build_graph():
     layout = build_gui()
-    window = psg.Window("Лемніската", layout)
+    window = psg.Window("Лемніската", layout, size=(350, 150))
     while True:
         events, val = window.read()
         if events == "Save":
