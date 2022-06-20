@@ -6,6 +6,7 @@ import PySimpleGUI as psg
 def build_gui():  # creating a GUI
     psg.theme("DarkBlue")
     layout = [
+        [psg.Text("Lemniscte function: r^2 = 2a^2*cos(2 * fi)")],
         [psg.Text("Value for parameter a:"), psg.InputText()],
         [psg.Text("Min fi value:"), psg.InputText()],
         [psg.Text("Max fi value:"), psg.InputText()],
@@ -16,7 +17,7 @@ def build_gui():  # creating a GUI
 
 def build_graph():
     layout = build_gui()
-    window = psg.Window("Лемніската", layout, size=(350, 150))
+    window = psg.Window("Лемніската", layout, size=(350, 175))
     while True:
         events, val = window.read()
         if events == "Save":
@@ -44,6 +45,9 @@ def build_graph():
 
             pypt.plot(x, y, color="blue")  # plot a graph
             # add axis labels and title of the graph
+            pypt.axhline(y=0, c="black", label = "y = 0")
+            pypt.axvline(x=0, c="black", label = "x = 0")
+            pypt.grid()
             pypt.xlabel("X axis")
             pypt.ylabel("Y axis")
             pypt.title("Лемніската")
