@@ -201,7 +201,6 @@ public class TextEditorController {
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD, FontPosture.REGULAR, fontSpinner.getValue()));
         else
             currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontPosture.REGULAR, fontSpinner.getValue()));
-
     }
 
     @FXML
@@ -281,14 +280,14 @@ public class TextEditorController {
             @Override
             public void changed(ObservableValue<? extends Integer> observableValue, Integer integer, Integer t1) {
                 currentFontValue = fontSpinner.getValue();
-                if (bold.isSelected())
+                if (bold.isSelected() && italic.isSelected())
+                    currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD,
+                            FontPosture.ITALIC, currentFontValue));
+                else if (bold.isSelected())
                     currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD,
                             FontPosture.REGULAR, currentFontValue));
                 else if (italic.isSelected())
                     currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.NORMAL,
-                            FontPosture.ITALIC, currentFontValue));
-                else if (bold.isSelected() && italic.isSelected())
-                    currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.BOLD,
                             FontPosture.ITALIC, currentFontValue));
                 else
                     currentTab.getTextArea().setFont(Font.font(currentTab.getTextArea().getFont().getFamily(), FontWeight.NORMAL,
